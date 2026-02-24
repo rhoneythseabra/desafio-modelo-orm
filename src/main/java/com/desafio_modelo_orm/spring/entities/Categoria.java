@@ -9,6 +9,8 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(columnDefinition = "TEXT")
     private String descricao;
 
     public Categoria() {

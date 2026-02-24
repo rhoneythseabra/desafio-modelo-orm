@@ -1,10 +1,18 @@
 package com.desafio_modelo_orm.spring.entities;
 
+import jakarta.persistence.*;
+
 import java.time.Instant;
 
+@Entity
+@Table(name = "tb_bloco")
 public class Bloco {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant inicio, fim;
 
     public Bloco() {
