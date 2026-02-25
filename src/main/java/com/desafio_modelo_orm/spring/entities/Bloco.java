@@ -15,6 +15,10 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant inicio, fim;
 
+    @ManyToOne
+    @JoinColumn(name = "atividades_id")
+    private Atividade atividades;
+
     public Bloco() {
     }
 

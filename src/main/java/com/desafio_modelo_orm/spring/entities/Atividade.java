@@ -2,6 +2,9 @@ package com.desafio_modelo_orm.spring.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_atividade")
 public class Atividade {
@@ -13,6 +16,9 @@ public class Atividade {
     @Column(columnDefinition = "TEXT")
     private String nome, descricao;
     private Double preco;
+
+    @OneToMany(mappedBy = "atividades")
+    private Set<Bloco> blocos =  new HashSet<Bloco>();
 
     public Atividade() {}
 
