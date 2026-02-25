@@ -18,8 +18,7 @@ public class Bloco {
     public Bloco() {
     }
 
-    public Bloco(Long id, Instant inicio, Instant fim) {
-        this.id = id;
+    public Bloco(Instant inicio, Instant fim) {
         this.inicio = inicio;
         this.fim = fim;
     }
