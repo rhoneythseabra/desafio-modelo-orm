@@ -2,6 +2,9 @@ package com.desafio_modelo_orm.spring.entities;
 
 import jakarta.persistence.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tb_participante")
 public class Participante {
@@ -10,6 +13,9 @@ public class Participante {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome, email;
+
+    @OneToMany(mappedBy = "id.participantes")
+    private Set<ParticipanteAtividade> atividades = new HashSet<>();
 
     public Participante() {}
 
