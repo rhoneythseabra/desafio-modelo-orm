@@ -13,6 +13,9 @@ public class Categoria {
     @Column(columnDefinition = "TEXT")
     private String descricao;
 
+    @OneToOne(mappedBy = "categoria")
+    private Atividade atividade;
+
     public Categoria() {
     }
 

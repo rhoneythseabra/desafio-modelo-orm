@@ -20,6 +20,10 @@ public class Atividade {
     @OneToMany(mappedBy = "atividades")
     private Set<Bloco> blocos =  new HashSet<Bloco>();
 
+    @OneToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categoria;
+
     public Atividade() {}
 
     public Atividade(String nome, String descricao, Double preco) {
@@ -58,5 +62,13 @@ public class Atividade {
 
     public void setPreco(Double preco) {
         this.preco = preco;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
     }
 }

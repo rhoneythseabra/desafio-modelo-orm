@@ -1,0 +1,1 @@
+INSERT INTO tb_atividade (nome, descricao, preco) VALUES ()
